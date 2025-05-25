@@ -3,7 +3,7 @@ Flutter приложение, написаное с использованием
 
 **Flutter SDK**: 3.29.3
 
-## Для запуска:
+# Для запуска:
 1. Клонируйте репозиторий себе на ПК.
 2. Откройте код в удобной IDE (для написания использовался VSCode).
 3. Запустите эмулятор или подключите физ. устройство.
@@ -13,43 +13,32 @@ Flutter приложение, написаное с использованием
 flutter run
 ```
 
-## Альтернатива
+# Альтернатива
 1. Установите APK-файл на физическое устройство.
 2. Запустите приложение.
 
-## Технологии
+# Технологии
 **Provider** отвечает за предоставление данных и управление состоянием между виджетами.
 **ChangeNotifier** — класс, который уведомляет слушателей об изменениях данных.
 
-## Структура проекта
-```
-lib/
-├── core/
-│ ├── domain/
-│ │ ├── di_container/ # DI-контейнер
-│ │ └── navigation/
-│ │ └── router.dart # Навигация
-│ ├── presentation/
-│ │ └── bottom_nav_bar.dart # Нижняя панель навигации
-│ ├── utils/
-│ │ └── filter_posts.dart # Утилита для фильтрации постов
-│ └── domain/
-│ └── post_fetch_exception.dart # Исключения при получении постов
-│
-├── features/
-│ ├── mini_posts/
-│ │ ├── presentation/
-│ │ │ ├── main_page/ # Экран со списком постов
-│ │ │ └── detailed_post_page/ # Экран с подробной информацией о посте
-│ │ ├── data/
-│ │ │ ├── model/ # Модель поста
-│ │ │ └── data_source/ # API-клиент на Retrofit
-│ │ └── domain/
-│ │ └── repository/ # Интерфейсы репозиториев
-│ │
-│ └── feedback/
-│ └── presentation/ # Страница обратной связи
-```
+# Структура проекта
+## **/lib/core**
+- domain/navigation/router.dart — навигация
+- presentation/bottom_nav_bar.dart — нижняя панель навигации
+- domain/di_container/ — DI-контейнер
+- utils/filter_posts.dart — утилита для фильтрации постов
+- domain/post_fetch_exception.dart — исключения при получении постов
+## **/lib/features**
+### features/mini_posts/
+- presentation/main_page/ — экран со списком постов
+- presentation/detailed_post_page/ — экран с подробной информацией о посте
+- data/model/ — модель поста
+- data/data_source/ — реализация API-клиента через Retrofit
+- domain/repository/ — интерфейсы репозиториев
+### features/feedback/
+- presentation/ — страница обратной связи
+
+
 ## Юнит-тесты
 **Юнит-тест** для утилиты фильтрации находится в:
 test/filter_test.dart
